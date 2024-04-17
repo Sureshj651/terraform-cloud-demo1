@@ -12,15 +12,15 @@ resource "azurerm_linux_virtual_machine" "mylinuxvm" {
     public_key = file("${path.module}/ssh-keys/terraform-azure.pub")
   }
   os_disk {
-    name = "osdisk${random_string.myrandom.id}"
+    name                 = "myOsDisk"
     caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
+    storage_account_type = "Premium_LRS"
   }
   source_image_reference {
-    publisher = "RedHat"
-    offer     = "RHEL"
-    sku       = "83-gen2"
-    version   = "latest"
+  publisher = "Canonical"
+  offer     = "UbuntuServer"
+  sku       = "20.04-LTS"  # FIXME SKU doesn't exist in westeurope
+  version   = "latest"
   }
   custom_data = filebase64("${path.module}/app-scripts/app1-cloud-init.txt")
   tags = local.common_tags 
