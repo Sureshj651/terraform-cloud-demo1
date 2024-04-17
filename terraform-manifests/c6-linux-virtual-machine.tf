@@ -4,7 +4,7 @@ resource "azurerm_linux_virtual_machine" "mylinuxvm" {
   computer_name       = local.vm_name # Hostname of the VM
   resource_group_name = azurerm_resource_group.myrg.name
   location            = azurerm_resource_group.myrg.location
-  size                = "Standard_DS1_v2"
+  size                = "Standard_D2ls_v5"
   admin_username      = "azureuser"
   network_interface_ids = [ azurerm_network_interface.myvmnic.id ]
   admin_ssh_key {
