@@ -1,10 +1,10 @@
 # Generic Variables
-business_unit = "jio"
-environment = "dev"
+business_unit = "airtel"
+environment = "staging"
 
 # Resource Variables
-resoure_group_name = "rg12"
-resoure_group_location = "eastus"
+resoure_group_name = "test-rg"
+resoure_group_location = "westus"
 
 
 
