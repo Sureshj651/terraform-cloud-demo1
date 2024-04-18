@@ -6,10 +6,6 @@ terraform {
       source = "hashicorp/azurerm"
       version = ">= 2.0" 
     }
-    random = {
-      source = "hashicorp/random"
-      version = ">= 3.0"
-    }
   }
 }
 
@@ -18,12 +14,5 @@ provider "azurerm" {
  features {}          
 }
 
-# Random String Resource
-resource "random_string" "myrandom" {
-  length = 6
-  upper = false 
-  special = false
-  number = false   
-}
 
 
